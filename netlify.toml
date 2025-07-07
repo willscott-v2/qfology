@@ -1,0 +1,9 @@
+# File: /netlify.toml - Version 2.1 (Timeout Fix)
+# Increase function timeout to handle competitor discovery
+
+[functions]
+  # Increase timeout from 10s to 30s (max for free tier)
+  timeout = 30
+  
+  # External modules for better bundling
+  external_node_modules = ["jsdom"]
