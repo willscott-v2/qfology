@@ -847,6 +847,49 @@ const TopicAnalyzer: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Credits Footer */}
+      <div className="mt-12 pt-8 border-t border-gray-200">
+        <div className="text-center text-sm text-gray-600">
+          Created by:{' '}
+          <a 
+            href="https://www.linkedin.com/in/williamscott/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Will Scott
+          </a>
+          ,{' '}
+          <a 
+            href="https://www.linkedin.com/in/williamscott/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            AI SEO Expert
+          </a>
+          , CEO of{' '}
+          <a 
+            href="https://www.searchinfluence.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Search Influence
+          </a>
+          {' '}with the help of{' '}
+          <a 
+            href="https://claude.ai/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium"
+          >
+            Claude
+          </a>
+          .
+        </div>
+      </div>
     </div>
   );
 };
