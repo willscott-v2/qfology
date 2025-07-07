@@ -8,15 +8,24 @@
 
 [build.environment]
   GITHUB_PAGES = "false"
+  NODE_VERSION = "18"
 
+# Essential Next.js plugin for Netlify
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["sharp"]
 
-# Ensure API routes work properly
+# Critical redirects for Next.js API routes
 [[redirects]]
   from = "/api/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
+
+# Handle all other routes through Next.js
+[[redirects]]
+  from = "/*"
   to = "/.netlify/functions/___netlify-handler"
   status = 200
