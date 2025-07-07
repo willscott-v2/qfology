@@ -1,9 +1,9 @@
-# File: /netlify.toml
+# File: /netlify.toml - Version 1.1
 # Netlify configuration for qfology Next.js application
-# Ensures API routes work properly with Netlify Functions
+# Simplified configuration to fix deployment issues
 
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = ".next"
 
 [build.environment]
@@ -13,19 +13,3 @@
 # Essential Next.js plugin for Netlify
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["sharp"]
-
-# Critical redirects for Next.js API routes
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
-
-# Handle all other routes through Next.js
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200

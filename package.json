@@ -1,12 +1,11 @@
 {
-  "//": "File: /package.json - Version 2.3.1",
+  "//": "File: /package.json - Version 2.3.2",
   "name": "enhanced-topic-analyzer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build:netlify",
-    "build:netlify": "next build",
+    "build": "next build",
     "build:github": "GITHUB_PAGES=true next build",
     "start": "next start",
     "lint": "next lint",
@@ -22,7 +21,7 @@
     "serpapi": "^2.1.0"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^5.11.4",
+    "@netlify/plugin-nextjs": "^5.7.2",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
