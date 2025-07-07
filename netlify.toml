@@ -1,5 +1,0 @@
-# File: /netlify.toml - Version 2.4 (Fixed TOML Syntax)
-# Increase function timeout to handle competitor discovery
-
-[functions]
-  timeout = 30
