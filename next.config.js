@@ -9,6 +9,7 @@ const nextConfig = {
     output: 'export',
     basePath: '/qfology',
     assetPrefix: '/qfology/',
+    trailingSlash: true,
   }),
   
   // Image configuration based on environment
@@ -20,10 +21,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
+  // Ensure API routes work on Vercel/Netlify (disabled for GitHub Pages)
+  ...((!isGitHubPages) && {
+    // This ensures API routes work properly on dynamic platforms
+    experimental: {
+      serverComponentsExternalPackages: ['jsdom']
+    }
+  }),
 }
 
 module.exports = nextConfig
