@@ -469,7 +469,7 @@ const TopicAnalyzer: React.FC = () => {
         <div>
           <h3 className="text-lg font-medium text-gray-900 mb-4">Competitor Discovery</h3>
           
-          {results?.competitors.length > 0 ? (
+          {results?.competitors && results.competitors.length > 0 ? (
             <div className="space-y-4">
               {/* Check if input URL appears in competitor results */}
               {(() => {
