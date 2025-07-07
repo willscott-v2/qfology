@@ -668,7 +668,7 @@ const TopicAnalyzer: React.FC = () => {
                               // KEY FIX: Check against actual webpage content
                               !originalContent.includes(entityName) &&
                               !originalContent.includes(entity.name.toLowerCase()) &&
-                              !entityWords.some(word => contentWords.has(word)) &&
+                              !entityWords.some((word: string) => contentWords.has(word)) &&
                               
                               // Additional quality filters
                               (entity.category === 'Product' || 
@@ -677,7 +677,7 @@ const TopicAnalyzer: React.FC = () => {
                               
                               // Must be specific tools/platforms (contain capital letters or tech terms)
                               (/[A-Z]/.test(entity.name) || 
-                               ['crm', 'erp', 'api', 'sdk', 'saas', 'platform', 'tool', 'software'].some(tech => 
+                               ['crm', 'erp', 'api', 'sdk', 'saas', 'platform', 'tool', 'software'].some((tech: string) => 
                                  entityName.includes(tech)
                                )) &&
                               
@@ -685,7 +685,7 @@ const TopicAnalyzer: React.FC = () => {
                               !['marketing', 'digital', 'content', 'social', 'search', 'optimization', 
                                 'management', 'strategy', 'solution', 'service', 'agency', 'company',
                                 'business', 'analytics', 'tracking', 'lead', 'generation', 'email',
-                                'campaign', 'advertising', 'promotion', 'seo', 'sem', 'ppc'].some(generic =>
+                                'campaign', 'advertising', 'promotion', 'seo', 'sem', 'ppc'].some((generic: string) =>
                                 entityName.includes(generic)
                               )
                             );
@@ -730,7 +730,7 @@ const TopicAnalyzer: React.FC = () => {
                         })
                         .slice(0, 3) // Top 3 most relevant
                         .map(([name, data]) => ({
-                          name: name.split(' ').map(word => 
+                          name: name.split(' ').map((word: string) => 
                             word.charAt(0).toUpperCase() + word.slice(1)
                           ).join(' '),
                           sites: data.sites,
