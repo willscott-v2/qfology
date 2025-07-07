@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:github": "GITHUB_PAGES=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "npm run build:github && touch out/.nojekyll"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
