@@ -1,6 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Add any other Next.js configuration options here
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
+  },
+  // GitHub Pages serves from /qfology subdirectory
+  basePath: '/qfology',
+  assetPrefix: '/qfology/',
 }
 
 module.exports = nextConfig
