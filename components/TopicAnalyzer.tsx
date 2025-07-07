@@ -432,7 +432,7 @@ const TopicAnalyzer: React.FC = () => {
               Entity Analysis for: {urls.split('\n')[0] || 'No URL'}
             </h3>
             
-            {results?.entities.length > 0 ? (
+            {results?.entities && results.entities.length > 0 ? (
               <div className="grid gap-4">
                 {results.entities.map((entity, index) => (
                   <div key={index} className="p-4 border border-gray-200 rounded-lg">
