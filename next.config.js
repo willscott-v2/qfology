@@ -1,3 +1,7 @@
+// File: /next.config.js
+// Next.js configuration for qfology - Enhanced Competitive Intelligence System
+// Supports deployment to GitHub Pages, Vercel, and Netlify with environment-based configuration
+
 /** @type {import('next').NextConfig} */
 
 // Check if we're building for GitHub Pages

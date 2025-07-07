@@ -1,0 +1,22 @@
+# File: /netlify.toml
+# Netlify configuration for qfology Next.js application
+# Ensures API routes work properly with Netlify Functions
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  GITHUB_PAGES = "false"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Ensure API routes work properly
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/___netlify-handler"
+  status = 200
